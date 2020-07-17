@@ -23,6 +23,7 @@ hr {
     background-color: #e5e5e5;
 }
 
+/*Header*/
 .container {
     width: 100%;
     max-width: 1230px;
@@ -41,6 +42,18 @@ hr {
     z-index: 1000;
 }
 
+.header.fixed {
+    background-color: aqua;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translate3d(0, 0, 0);
+}
+
 .header__inner {
     display: flex;
     justify-content: space-between;
@@ -53,6 +66,7 @@ hr {
     color: white;
 }
 
+/*Nav*/
 .nav {
     font-size: 14px;
     text-transform: uppercase;
@@ -89,6 +103,59 @@ hr {
     opacity: 1;
 }
 
+/*Nav toggle*/
+.nav__toggle {
+    font-size: 0;
+    color: transparent;
+    display: none;
+
+    width: 30px;
+    padding: 10px 0;
+    border: 0;
+    position: absolute;
+    background: 0;
+
+    top: 24px;
+    right: 24px;
+    z-index: 1;
+}
+
+.nav__toggle__item {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+
+    transition: background 0.2s linear;
+
+}
+
+.nav__toggle__item::before,
+.nav__toggle__item::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+}
+
+.nav__toggle__item::before {
+    top: -8px;
+}
+
+.nav__toggle__item::after {
+    bottom: -8px;
+}
+
+/*Intro*/
 .intro {
     display: flex;
     flex-direction: column;
@@ -96,6 +163,8 @@ hr {
 
     width: 100%;
     height: 100vh;
+    min-height: 820px;
+    position: relative;
     background: url("../Images/1.jpg") center no-repeat;
     background-size: cover;
 }
@@ -105,15 +174,15 @@ hr {
     width: 100%;
     max-width: 850px;
     margin: 0 auto;
+
     text-align: center;
 }
 
 .intro__title {
     color: rgb(57, 235, 241);
-    font-size: 100px;
+    font-size: 150px;
     font-weight: 700;
     text-transform: uppercase;
-    line-height: 1;
 }
 
 .intro__title:after {
@@ -132,10 +201,13 @@ hr {
     margin-bottom: 20px;
 }
 
+/*Button*/
+
 .btn {
     border: 3px solid rgb(57, 235, 241);
     color: rgb(57, 235, 241);
     padding: 5px 25px;
+
     font-size: 14px;
     font-weight: 700;
     text-decoration: none;
@@ -153,6 +225,8 @@ hr {
     color: white;
     
 }
+
+/*Slider*/
 
 .slider {
     /*border: solid orange;*/
@@ -207,6 +281,7 @@ hr {
     font-size: 24px;
 }
 
+/*Section*/
 .section {
     padding: 80px 0;
 
@@ -263,28 +338,25 @@ hr {
 }
 
 .card {
-    margin-top: 80px;
+    margin: 80px -15px 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .card__item {
-    width: 300px;
+    width: 33,33333%;
+    padding: 0 15px;
     
 }
 
 .card__inner {
-    height: 180px;
     background-color: violet;
 
     position: relative;
 }
 
 
-.card__img__item {
-    width: 300px;
-    height: 180px;
-}
 
 .card__inner:hover .card__img img {
     opacity: 0.2;
@@ -297,7 +369,14 @@ hr {
 .card__img {
     background: linear-gradient(to bottom, #f38181, #fce38a);
     transition: transform 0.2s linear;
-    height: 100%;
+    /*height: 100%;*/
+}
+
+.card__img img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: opacity 0.1s linear;
 }
 
 .card__inner:hover .card__text {
@@ -344,30 +423,33 @@ hr {
 }
 
 /*statistics*/
+
 .statistics {
     background-color: #95e1d3;
 }
 
 .stat {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .stat__item {
-     flex: 1 1 0;
+    flex: 1 1 0;
     padding: 70px 50px;
     text-align: center;
     color: #fff;
 
-    border-left: 1px solid #e2dfdf;
+    border-left: 1px solid #c9c6c6;
  }
 
 .stat__item:last-child {
-    border-left: 1px solid #e2dfdf;
+    border-left: 1px solid #c9c6c6;
 }
 
 .stat__num {
     font-size: 72px;
     font-weight: 700;
+
     line-height: 1; /*высота между цифрой и текстом*/
 }
 
@@ -376,15 +458,21 @@ hr {
     text-transform: uppercase;
 }
 
+/*Services*/
 .services {
     display: flex;
-
+    flex-wrap: wrap;
 }
+
 .services__item {
-    flex: 1 1 0;
-    padding-left: 85px;    
-    padding-right: 35px;
+    width: 33,33333%;
+    padding: 0 35px 40px 85px;
     position: relative;
+    margin-bottom: 40px;
+}
+
+.services__item--border {
+    border-bottom: 1 px solid #e5e5e5;
 }
 
 .services__icon {
@@ -408,7 +496,7 @@ hr {
     color: #999999;
 }
 
-/*devices*/
+/*Devices*/
 
 .devices {
     width: 100%;
@@ -419,6 +507,8 @@ hr {
 
 .devices__item {
     display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 .devices__item--iphone {
@@ -430,23 +520,31 @@ hr {
 
 /*WeDo*/
 
-.wedo{
-    display: flex; /*в одну строку*/
+.wedo {
+    display: flex;
+    flex-wrap: wrap; /*в одну строку*/
+    margin: 0 -15px;
 }
 
 .wedo__item {
     width: 50%;
-
+    padding: 0 15px;
 }
 
-/*accordion*/
+.wedo__img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/*Accordion*/
 
 .accordion__item {
     margin-bottom: 10px;
     border: 1px solid #e5e5e5;
 }
 
-.accordion__item.active .accordion__conten {
+.accordion__item.active .accordion__content {
     display: block;
 }
 
@@ -494,7 +592,7 @@ hr {
     text-transform: uppercase;
 }
 
-.accordion__conten {
+.accordion__content {
     padding: 15px 20px;
     font-size: 15px;
     display: none;
@@ -504,7 +602,7 @@ hr {
     color: #999999;
 }
 
-/*reviews*/
+/*Reviews*/
 
 .reviews {
     padding: 0 110px;
@@ -512,13 +610,16 @@ hr {
 }
 
 .reviews__item {
-    padding-left: 255px;
+    padding-left: 205px;
     position: relative;
 }
 
 .reviews__photo {
     border: 2px solid #95e1d3;
     border-radius: 50%;
+    display: block;
+    width: 145px;
+    height: 145px;
 
     position: absolute;
     top: 0;
@@ -614,7 +715,9 @@ hr {
     background-color: #f38181;
 }
 
+/*Logos*/
 .logos {
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -624,6 +727,8 @@ hr {
 
 .works {
     display: flex;
+    flex-wrap: wrap;
+    
 }
 
 .works__col {
@@ -632,7 +737,6 @@ hr {
 
 .works__item {
     position: relative;
-
     background: linear-gradient(to bottom, #f38181, #fce38a);
 }
 
@@ -689,16 +793,15 @@ hr {
 
 .clients {
 
-    padding: 0 110px;
     position: relative;
 }
 
 .clients__item {
-    width: 31%;
+    width: 49%;
     padding-left: 130px;
     position: relative;
     display: inline-block;
-    margin: 0 3%;
+    /*margin: 0 3%;*/
 }
 
 .clients__photo {
@@ -870,9 +973,8 @@ hr {
 
 .map__link {
     text-decoration: none;
-<<<<<<< Updated upstream
-=======
 }
+
 
 /*footer*/
 
@@ -1057,7 +1159,7 @@ hr {
 }
 
 .instagram__item {
-    width: 32,33333%;
+    width: 33.33333%;
     border-bottom: 1px solid #fff;
 }
 
@@ -1093,24 +1195,396 @@ hr {
 }
 
 @media (max-width: 990px) {
-/*intro*/
-.intro__uptitle {
-    font-size: 32px;
-}
-.intro__title {
-    font-size: 80px;
+    /*intro*/
+    .intro__uptitle {
+        font-size: 32px;
+    }
+
+    .intro__title {
+        font-size: 80px;
+    }
+    
+    /*Statistics*/
+
+    .stat {
+        justify-content: center;
+    }
+
+    .stat__item {
+        flex: none;
+        width: 33,33333%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        border: 0;
+    }
+
+    .stat__item:last-child {
+        border-right: 0;
+    }
+
+    /*Services*/
+    .services__item {
+        width: 50%;
+        margin-bottom: 0;
+    }
+
+    .services__item--border {
+        border-bottom: 0;
+    }
+
+    /*Devices*/
+    .section--devices {
+        background-color: #f88181;
+    }
+
+    /*Reviews*/
+    .reviews {
+        padding: 0 60px;
+    }
+
+    .reviews__photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .reviews__item {
+        padding-left: 175px;
+    }
+
+    /*Footer*/
+
+    .footer__inner {
+        flex-wrap: wrap;
+    }
+
+    .footer__col--first {
+        width: 100%;
+    }
+
+    .footer__col--second {
+        width: 50%;
+    }
+    
+    .footer__col--third {
+        width: 36%;
+    }
 }
 
 @media (max-width: 770px) {
+    /*intro*/
+    .intro__uptitle {
+        font-size: 22px;
+    }
+    .intro__title {
+        font-size: 40px;
+        /*Intro*/
+    }
+    .intro {
+        min-height: 650px;
+    }
+
+    /*Header*/
+    .header {
+        padding: 10px 0;
+    }
+
+    /*nav*/
+
+    .nav {
+        display: none;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background-color: #999999;
+    }
+
+    .nav__link {
+        display: block;
+        margin: 0;
+        padding: 8px 20px;
+
+    }
+
+    .nav__toggle {
+        display: block;
+    }
+
+    /*slider*/
+
+    .slider__text {
+        display: none;
+    }
+
+
+    .slider__item.active::before {
+        width: 50%;
+    }
+
+    /*Card*/
+
+    .card {
+        margin-top: 50px;
+        justify-content: center;
+    }
+
+    .card__item {
+        width: 100%;
+        max-width: 410px;
+        margin-bottom: 30px;
+    }
+
+    .card__item:last-child {
+        border-bottom: 0;
+    }
+
+    /*wedo*/
+
+    .wedo__item {
+        width: 100%;
+    }
+
+    .wedo__img {
+        display: none;
+        margin: 0 auto 15px;
+    
+    }
+
+    /*revieews*/
+    
+
+    .reviews__photo {
+        margin: 0 auto 20px;
+        position: static;
+    }
+
+    .reviews__item {
+        padding-left: 0;
+    }
+
+    .reviews__text {
+        font-size: 16px;
+    }
+
+    .reviews__author {
+        font-size: 16px;
+    }
+
+    /*Logo*/
+    
+    .logos__photo {
+        max-width: 100%;
+    }
+
+    /*Works*/
+
+    .works__col {
+        width: 50%;
+        flex: none;
+
+    }
+
+    /*Clients*/
+
+    .clients__item {
+        width: 100%;
+    }
+
+    /*Blog*/
+
+    .blog {
+        flex-wrap: wrap;
+    }
+
+    .blog__item {
+        width: 100%;
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    .blog__footer {
+        padding: 0 0 30px;
+    }
+
+    .blog__content {
+        margin-bottom: 15px;
+    }
+
+    .blog__stat__item {
+        margin-top: 15px;
+    }
+
+    .footer__col--first {
+        width: 100%;
+    }
+
+    .footer__col--second {
+        width: 100%;
+    }
+    
+    .footer__col--third {
+        width: 57%;
+    }
 
 }
 
 @media (max-width: 575px) {
-/*intro*/
-.intro__uptitle {
-    font-size: 22px;
-}
-.intro__title {
-    font-size: 40px;
->>>>>>> Stashed changes
+    /*intro*/
+    .intro__uptitle {
+        font-size: 22px;
+    }
+
+    .intro__title {
+        font-size: 40px;
+    }
+
+    /*Section*/
+    .section__header {
+        margin-bottom: 50px;
+    }
+
+    .section__title {
+        font-size: 25px;
+    }
+
+    .section__uptitle {
+        font-size: 20px;
+    }
+
+    .section__title::after {
+        margin: 20px auto;
+    }
+
+    /*Statistics*/
+    .stat__item {
+        width: 100%;
+        border-bottom: 1px solid #c9c6c6;
+    }
+
+    .stat__item:last-child {
+        border-bottom: 0;
+    }
+
+    .stat__num {
+        font-size: 52px;
+    }
+
+    /*Servises*/
+
+    .services {
+        justify-content: center;
+    }
+
+    .services__item {
+        width: 100%;
+        max-width: 400px;
+        padding-left: 55px;
+        padding-right: 0;
+    }
+
+    .services__icon {
+        left: 0;
+    }
+
+    /*Devices*/
+
+    .devices {
+        max-width: 320px;
+    }
+
+    .devices__item--iphone {
+        width: 180px;
+        bottom: -50px;
+        right: -80px;
+    }
+
+    /*wedo*/
+    .wedo__img {
+        display: none;
+    }
+    
+    /*revieews*/
+    .reviews {
+        padding: 0;
+    }
+
+    .reviews__btn {
+        top: 15%;
+    }
+
+    /*logo*/
+    .logos {
+    
+        flex-wrap: wrap;
+        padding: 0;
+    }
+
+    .logos__item {
+        width: 50%;
+        padding: 20px 30px;
+    }
+
+    .logos__photo {
+        display: block;
+        margin: 0 auto;
+    }
+
+
+    
+     /*Works*/
+
+     .works {
+        margin-top: 40px;
+        justify-content: center;
+     }
+
+     .works__col {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .works__image {
+        width: 100%;
+    }
+    
+    /*Clients*/
+
+    .clients__item {
+        
+        padding-left: 0;
+    }
+
+    .clients__photo {
+        display: flex;
+        margin: 0 auto 20px;
+        position: static;
+    }
+
+    .clients__content {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .clients__prof::after {
+        margin: 20px auto;
+    }
+
+    /*Footer*/
+
+    .subscribe {
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+        max-width: 100%;
+    }
+
+    .subscribe__input {
+        width: 100%;
+        margin-bottom: 8px;
+        border-right: 1px solid #e5e5e5;
+    }
+
+    .subscribe__btn {
+        width: 100%;
+
+    }
 }
