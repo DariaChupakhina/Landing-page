@@ -345,7 +345,7 @@ hr {
 }
 
 .card__item {
-    width: 33,33333%;
+    width: 33.33333%;
     padding: 0 15px;
     
 }
@@ -443,7 +443,7 @@ hr {
  }
 
 .stat__item:last-child {
-    border-left: 1px solid #c9c6c6;
+    border-right: 1px solid #c9c6c6;
 }
 
 .stat__num {
@@ -465,14 +465,14 @@ hr {
 }
 
 .services__item {
-    width: 33,33333%;
+    width: 33.33333%;
     padding: 0 35px 40px 85px;
     position: relative;
     margin-bottom: 40px;
 }
 
 .services__item--border {
-    border-bottom: 1 px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .services__icon {
@@ -693,7 +693,7 @@ hr {
 .social__item {
     width: 30px;
     height: 30px;
-    padding: 12px 10px;
+    /*padding: 12px 10px;*/
 
     font-size: 30px;
     text-decoration: none;
@@ -1212,7 +1212,7 @@ hr {
 
     .stat__item {
         flex: none;
-        width: 33,33333%;
+        width: 33.33333%;
         padding-top: 30px;
         padding-bottom: 30px;
         border: 0;
@@ -1586,5 +1586,13 @@ hr {
     .subscribe__btn {
         width: 100%;
 
+    }
+
+    .footer__col--second {
+        margin: 0 auto;
+    }
+
+    .footer__col--third {
+        margin: 0 auto;
     }
 }
