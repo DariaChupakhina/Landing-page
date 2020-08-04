@@ -54,6 +54,10 @@ hr {
     transform: translate3d(0, 0, 0);
 }
 
+/*.header.active {
+    background-color: aqua;
+}*/
+
 .header__inner {
     display: flex;
     justify-content: space-between;
@@ -145,6 +149,8 @@ hr {
     position: absolute;
     left: 0;
     z-index: 1;
+
+    transition: transform 0.2s linear;
 }
 
 .nav__toggle__item::before {
@@ -153,6 +159,20 @@ hr {
 
 .nav__toggle__item::after {
     bottom: -8px;
+}
+
+.nav__toggle.active .nav__toggle__item {
+    background: none;
+}
+
+.nav__toggle.active .nav__toggle__item::before {
+    transform-origin: left top;
+    transform: rotate(45deg) translate3d(0px, -3px, 0);
+}
+
+.nav__toggle.active .nav__toggle__item::after{
+    transform-origin: left bottom;
+    transform: rotate(-45deg) translate3d(0px, 3px, 0);
 }
 
 /*Intro*/
@@ -1165,6 +1185,8 @@ hr {
 
 .instagram__item img {
     display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 
@@ -1285,7 +1307,7 @@ hr {
 
     /*Header*/
     .header {
-        padding: 10px 0;
+        padding-top: 10px;
     }
 
     /*nav*/
@@ -1296,7 +1318,7 @@ hr {
         position: absolute;
         left: 0;
         top: 100%;
-        background-color: #999999;
+        background-color: aqua;
     }
 
     .nav__link {
